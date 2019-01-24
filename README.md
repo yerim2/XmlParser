@@ -30,3 +30,12 @@ ctime = os.path.getctime(filePATH)
 ### 2. 사용한 xml파일들
 > eNodeB의 동작 여부를 확인하는 simulator결과 값을 가진 mxl파일
 
+![image](https://user-images.githubusercontent.com/24403704/51648132-d047e580-1fc2-11e9-890c-992702a98f4b.png)
+
+> 사용한 폴더 이름 예시
+
+![image](https://user-images.githubusercontent.com/24403704/51648193-eeade100-1fc2-11e9-957f-95875ff3438a.png)
+
+> 결과물
+
+![image](https://user-images.githubusercontent.com/24403704/51648227-05ecce80-1fc3-11e9-8281-f33f6d0e745c.png)
