@@ -6,7 +6,7 @@ Xml to csv program
 ### 1. 코드
 > 1-1. source.py
 
-'''ruby
+```ruby
 
 //----------filepath(xml file)의 root를 얻어서 원하는 태그의 내용을 출력----------
 tree = ET.parse(filepath)
@@ -25,4 +25,4 @@ ctime = os.path.getctime(filePATH)
     min = timeinfo.minute
     cellId = 0
     
-'''
+```
