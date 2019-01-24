@@ -26,3 +26,7 @@ ctime = os.path.getctime(filePATH)
     cellId = 0
     
 ```
+
+### 2. 사용한 xml파일들
+> eNodeB의 동작 여부를 확인하는 simulator결과 값을 가진 mxl파일
+
