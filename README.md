@@ -6,6 +6,9 @@ Xml to csv program
 ### 1. 코드
 > 1-1. source.py
 //------------------xml의 root를 받아 'mt'태그를 받음------------------
+
+"'
 tree = ET.parse(firstfile)
 root = tree.getroot()
 for child in root[1][1].findall('mt'):
+"'
