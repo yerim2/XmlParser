@@ -5,7 +5,7 @@ Xml to csv program
 
 ### 1. 코드
 > 1-1. xmlParser.py
->> 파싱할 디렉토리의 path와 path내 파일의 order를 사용자 입력받아 하나의 csv로 변환
+>> 파싱할 디렉토리의 path와 path내 파일의 order를 사용자 입력받아 하나의 csv로 변환,
 >> 개발/ 실행환경 : window
 
 ```ruby
@@ -30,7 +30,7 @@ ctime = os.path.getctime(filePATH)
 ```
 > 1-2. simtest.py
 >> LTE simulator를 사용하여 특정 seed값에 대해 원하는 결과가 나오는지 확인하기 위함
->> seed.txt의 값을 읽어 lcm_test.seed를 만들어 테스트하여 결과는 expected_result라는 csv파일을 생성
+>> seed.txt의 값을 읽어 lcm_test.seed를 만들어 테스트하여 결과는 expected_result라는 csv파일을 생성,
 >> 개발/ 실행 환경 : linux 
 
 ```ruby
