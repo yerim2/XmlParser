@@ -4,7 +4,8 @@ Xml to csv program
 > 파이썬의 기본 모듈 ElementTree를 이용하여 xml을 파서한 후 csv파일로 변환하는 프로그램입니다
 
 ### 1. 코드
-> 1-1. source.py
+> 1-1. xmlParser.py
+>> 파싱할 디렉토리의 path와 path내 파일의 order를 사용자 입력받아 하나의 csv로 변환
 
 ```ruby
 
@@ -26,6 +27,9 @@ ctime = os.path.getctime(filePATH)
     cellId = 0
     
 ```
+> 1-2. simtest.py
+>> LTE simulator를 사용하여 특정 seed값에 대해 원하는 결과가 나오는지 확인하기 위해 expected_result를 생성
+>> seed.txt의 값을 읽어 lcm_test.seed를 만들어 테스트하여 결과는 expected_result라는 csv파일로 
 
 ### 2. 사용한 xml파일들
 > eNodeB의 동작 여부를 확인하는 simulator결과 값을 가진 mxl파일
