@@ -9,9 +9,17 @@ ERBS = 1541
 Num = str(ERBS)
 ERBSID = "ERBS"+ Num
 
-dirPATH =  'C:\\Users\ekmxrmx\Desktop\SubNetwork=NETSIM_ERBS\MeContext='+ERBSID
+input_path = input('file path : ')
+filenum = int(input('file order: '))
+
+fileorder = filenum-1
+
+
+dirPATH = input_path + '\\MeContext=' +ERBSID
+
 files = [f for f in listdir(dirPATH) if isfile(join(dirPATH,f))]
-firstfile = dirPATH+ '/' + files[2]
+firstfile = dirPATH+ '/' + files[fileorder]
+print(files)
 
 mt = ['ERBS Id', 'Date', 'Hour', 'Min', 'Cell Id']
 tree = ET.parse(firstfile)
@@ -21,12 +29,11 @@ i = 0
 for child in root[1][1].findall('mt'):
      mt.append(child.text)
      i = i + 1
-print(i)
+
 
 ######### csv의 첫줄 ########################################################
-with open('ex1.csv','w',newline='')as fd:
+with open('output.csv','w',newline='')as fd:
     fieldnames = ['mt']
-    #writer = csv.DictWriter(fd, fieldnames=fieldnames)
     fields = mt
     writer = csv.writer(fd)
     writer.writerow(fields)
@@ -36,9 +43,8 @@ with open('ex1.csv','w',newline='')as fd:
 for roof in range(ERBS, 1551):
     ERBSID = "ERBS" + str(roof)
     dirPATH = 'C:\\Users\ekmxrmx\Desktop\SubNetwork=NETSIM_ERBS\MeContext=' + ERBSID
-    print(dirPATH)
     files = [f for f in listdir(dirPATH) if isfile(join(dirPATH, f))]
-    filePATH = dirPATH + '/' + files[2]
+    filePATH = dirPATH + '/' + files[fileorder]
     print(filePATH)
 
     ctime = os.path.getctime(filePATH)
@@ -60,10 +66,9 @@ for roof in range(ERBS, 1551):
     for child in root[1][1].findall('mv'):
         for r in child:
             count.append(r.text)
-    print(len(count))
 
     cellnum = len(count) // i #셀의 개수 구하기
-    print(cellnum)
+
 
     cellarray =[]
     for z in range(0,len(count)):
@@ -71,18 +76,12 @@ for roof in range(ERBS, 1551):
         if(len(ID) > 1):
             IDNum = ID[2].split('=')
             cellarray.append(IDNum[1])
-    print(cellarray)
-    #print(cellarray.index('0'))
+
 
     ########## count만 찍는부분 ###############################################
     for y in range(0, cellnum):  #0~5번 돌기
         # cell number 빼기
         ID = count[cellId * (i + 1)].split(',')
-        #print(ID[2])
-        #IDNum = ID[2].split('=')
-        #print(IDNum[1])
-        print(cellarray.index(str(y)))
-
         cellId = cellarray.index(str(y))
 
 
@@ -90,9 +89,8 @@ for roof in range(ERBS, 1551):
         for x in range(cellId * (i + 1) + 1, (i + 1) * (cellId + 1)):
             mts.append(count[x])
 
-        with open('ex1.csv', 'a', newline='')as fd:
+        with open('output.csv', 'a', newline='')as fd:
             writer = csv.writer(fd)
             fields2 = mts
             writer.writerow(fields2)
         mts.clear()
-        #cellId = cellId + 1
